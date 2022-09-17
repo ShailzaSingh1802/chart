@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<style>
+    body{
+        margin: auto;
+        padding: 0%;
+        box-sizing: border-box;
+        background-color: lavender;
+    }
+    
+    .chartCard{
+       display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .chartBox{
+        width:100%;max-width:600px
+    }
+    .chartBox1{
+        width:100%;max-width:600px
+    }
+    .chartMenu{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 0 auto;
+      width: 960px;
+      
+    }
+    .box{
+      width: 200px;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      height: 50px;
+      margin: 50px;
+      padding: 0%;
+      box-shadow: 0 4px 25px 0 rgb(168 180 208 / 10%);
+      border-radius: 16px;
+      background-color: azure;
+      font-size: x-small;
+    }
+
+</style>
+<head></head>
+<body>
+    <div class="chartMenu">
+      <div class="box" id="Consumers"><h1>Consumers:44,339</h1></div>
+      <div class="box" id="Profit"><h1>Profit:$55,678</h1></div>
+      <div class="box" id=Total-cost><h1>Total-cost:$46,897</h1></div>
+    </div>
+    <div class="chartCard">
+       <div class = chartBox>
+       <canvas id="myChart"></canvas>
+       </div>
+      <div class="chartBox1">
+       <canvas id="myChart1"></canvas>
+       </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    
+    <script>
+     
+     var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+     var yValues = [55, 49, 44, 24, 20];
+     var barColors = ["powderblue", "lightgreen","lightpink","grey","offwhite"];
+
+ new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{ 
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "World Wine Production 2018"
+    }
+  }
+});
+ var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+ var yValues = [55, 49, 44, 24, 15];
+ var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145"
+  
+ 
+ 
+];
+
+new Chart("myChart1", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "World Wide Wine Production"
+    }
+  }
+});
+</script>
+
+</body>
+</html>
